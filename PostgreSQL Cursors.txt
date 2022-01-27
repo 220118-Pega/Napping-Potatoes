@@ -1,0 +1,44 @@
+
+PostgreSQL Cursor
+Sometimes the application needs to process the rows in a singleton fashion, i.e., on row by row basis rather than the entire result set at once. But, typically, you use cursors when you want to divide a large Result Set into parts and process each part individually.  Another usage is to return a reference to a cursor that a function has created, allowing the caller to read the rows.
+(If you process the Result Set at once, you may have a memory overflow errorbut, PL/pgSQL users do not normally need to worry about memory overflow, since FOR loops automatically use a cursor internally to avoid memory problems.)
+
+
+The Different Types of Cursors
+
+"Cursor"
+A cursor is a pointer to a private SQL area that stores information about processing a specific SELECT or DML statement.  PL/SQL opens an implicit cursor every time you run a SELECT or DML statement. You cannot control an implicit cursor, but you can get information from its attributes.
+
+Session Cursors
+A session cursor lives in session memory until the session ends, when it ceases to exist. 
+You can get information about any session cursor from its attributes (which you can reference in procedural statements, but not in SQL statements).
+
+Implicit Cursor
+A session cursor that is constructed and managed by PL/SQL is an implicit cursor
+
+Explicit Cursor
+A session cursor that you construct and manage is an explicit cursor.
+
+Custom Cursors (i.e, Explicit Cursors )
+Explicit cursors are user-defined and thus custom cursors, ie, you construct and manage it.  
+You can declare a cursor and then define it later, but what we show here is when you declare and define the cursoe together.
+
+DECLARE cursor_name CURSOR		// declare the cursor
+  FOR
+SELECT select_statement			// to define the output for the cursor
+OPEN cursor_name				// open the cursor to store the result set
+FETCH NEXT FROM cursor INTO variable_list
+	// begin fecthing rows one-by-one or in block to do data manipulation 
+	// %TYPE and %ROWTYPE are useful for declaring the variables_list.
+	// The current row is fetched, column values are stored, and cursor advances.
+
+CLOSE Cursor_name			//Should close the cursor once done with it.
+DEALLOCATE cursor_name
+
+You cannot assign a value to an explicit cursor, use it in an expression, or use it as a formal subprogram parameter or host variable.  (You can do those things with a cursor variable.)
+
+You can however can reference an explicit cursor or cursor variable by its name. 
+Therefore, an explicit cursor or cursor variable is called a named cursor.
+
+
+
