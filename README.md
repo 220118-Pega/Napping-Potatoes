@@ -10,10 +10,10 @@
 
 ## Types of Cursors 
 
-###### - [Implicit](https://docs.oracle.com/database/121/LNPLS/static.htm#LNPLS99956) 
+###### - [Implicit](https://www.geeksforgeeks.org/cursors-in-pl-sql/) 
 > If the Oracle engine opened a cursor for its internal processing it is known as an Implicit Cursor. It is created “automatically” for the user by Oracle when a query is executed and is simpler to code.
 
-###### - [Explicit](https://docs.oracle.com/database/121/LNPLS/static.htm#LNPLS99956)
+###### - [Explicit](https://www.geeksforgeeks.org/cursors-in-pl-sql/)
 > A Cursor can also be opened for processing data through a PL/SQL block, on demand. Such a user-defined cursor is known as an Explicit Cursor.
 
 
@@ -32,5 +32,4 @@
 
 ## References: 
 - [Geeks4Geeks - Cursor Overview](https://www.geeksforgeeks.org/cursors-in-pl-sql/)
-- [Oracle - Explicit Cursor](https://docs.oracle.com/cd/E18283_01/appdev.112/e17126/explicit_cursor.htm)
-- [Oracle - Implicit Cursor](https://docs.oracle.com/database/121/LNPLS/implicit_cursor_attribute.htm#LNPLS01348)
+- [Oracle - Implicit & Explicit Cursor](https://docs.oracle.com/database/121/LNPLS/static.htm#LNPLS99956)
