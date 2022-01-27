@@ -33,3 +33,4 @@
 ## References: 
 - [Geeks4Geeks - Cursor Overview](https://www.geeksforgeeks.org/cursors-in-pl-sql/)
 - [Oracle - Implicit & Explicit Cursor](https://docs.oracle.com/database/121/LNPLS/static.htm#LNPLS99956)
+- [PostgreSQL - Cursor Implementations](https://www.postgresql.org/docs/9.2/plpgsql-cursors.html)
