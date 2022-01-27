@@ -17,7 +17,7 @@
 > A Cursor can also be opened for processing data through a PL/SQL block, on demand. Such a user-defined cursor is known as an Explicit Cursor.
 
 
-###### 4 Steps for Utilizing Explicit Clause
+## 4 Steps for Utilizing Explicit Clause
 1. DECLARE the cursor in Declaration section
 2. OPEN the cursor in Execution section
 3. FETCH the data from cursor into PL/SQL variables or records in Exectution section
