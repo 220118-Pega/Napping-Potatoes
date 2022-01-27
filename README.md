@@ -1,2 +1,2 @@
-# Napping-Potatoes
-The Blueprint
+# SQL Cursors
+
