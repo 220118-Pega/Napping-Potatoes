@@ -1,0 +1,46 @@
+CREATE TABLE strings (
+  id serial primary key,
+  val varchar
+);
+INSERT INTO strings (val)
+VALUES ('a'), ('b'), ('c');
+-- iterate over the data in a cursor
+CREATE OR REPLACE FUNCTION josh_test()
+RETURNS SETOF varchar AS $$
+DECLARE
+  curs CURSOR FOR SELECT * FROM strings;
+  row  RECORD;
+BEGIN
+  open curs;
+  LOOP
+    FETCH FROM curs INTO row;
+    EXIT WHEN NOT FOUND;
+    return next row.val;
+  END LOOP;
+  
+  -- RAISE NOTICE '%', val;
+END; $$ LANGUAGE plpgsql;
+
+SELECT josh_test();
+
+--
+--
+-- MY TEST
+--
+--
+CREATE OR REPLACE FUNCTION jackie_test()
+RETURNS SETOF INT AS $$
+DECLARE 
+	b_cursor CURSOR FOR SELECT * FROM trainers;
+	row RECORD;
+	
+BEGIN
+	open b_cursor;
+	LOOP
+		fetch from B_CURSOR INTO row;
+		EXIT WHEN NOT FOUND
+		RETURN row.caffeine_level;
+	END LOOP;
+
+END; $$ LANGUAGE plpgsql;
+SELECT jackie_test();
