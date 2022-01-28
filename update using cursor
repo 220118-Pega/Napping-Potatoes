@@ -1,0 +1,9 @@
+BEGIN;
+	
+DECLARE b_cursor SCROLL CURSOR FOR SELECT * FROM trainers OPEN;
+	FETCH FROM b_cursor;
+	UPDATE trainers SET caffeine_level = 500 WHERE CURRENT OF b_cursor;
+	FETCH PRIOR FROM b_cursor;
+
+CLOSE b_cursor;
+END;
