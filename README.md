@@ -1,5 +1,9 @@
 # SQL Cursors
 
+## Cursor Introduction
+Sometimes the application needs to process the rows in a singleton fashion, i.e., on row by row basis rather than the entire result-set at once. But, typically, you use cursors when you want to divide a large result-set into parts and process each part individually. Another usage is to return a reference to a cursor that a function has created, allowing the caller to read the rows.
+(If you process the result-set at once, you may have a memory overflow error but, PL/pgSQL users do not normally need to worry about memory overflow, since FOR loops automatically use a cursor internally to avoid memory problems.)
+
 ## Cursor Actions
 - DECLARE
 - OPEN
@@ -24,9 +28,29 @@
 4. CLOSE the cursor in Exection section before ending PL/SQL block
 
 
+## Sample Code
+Using Cursors
+To retrieve a Result-Set holding multiple rows, an application has to declare a cursor and fetch each row from the cursor. You can declare a cursor and then define it later, but what we show here is when you declare and define the cursoe together. 
 
+DECLARE foo_bar CURSOR FOR
+    SELECT number, ascii FROM foo
+    ORDER BY ascii;
+OPEN foo_bar;
+FETCH foo_bar INTO :FooBar, DooDad;
+CLOSE foo_bar;
+COMMIT;
 
+## Syntax
 
+DECLARE cursor_name CURSOR		// declare the cursor
+  FOR
+SELECT select_statement			// to define the output for the cursor
+OPEN cursor_name				// open the cursor to store the result set
+FETCH NEXT FROM cursor INTO variable_list
+					// Current row is fetched, column values stored, cursor advances.
+					// %TYPE and %ROWTYPE are useful for declaring the variables_list.
+CLOSE Cursor_name	//Should close the cursor once done with it.
+DEALLOCATE cursor_name
 
 
 

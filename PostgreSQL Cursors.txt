@@ -39,11 +39,11 @@ DECLARE cursor_name CURSOR		// declare the cursor
 SELECT select_statement			// to define the output for the cursor
 OPEN cursor_name				// open the cursor to store the result set
 FETCH NEXT FROM cursor INTO variable_list
-	// begin fecthing rows one-by-one or in block to do data manipulation 
-	// %TYPE and %ROWTYPE are useful for declaring the variables_list.
-	// The current row is fetched, column values are stored, and cursor advances.
+// begin fecthing rows one-by-one or in block to do data manipulation 
+// %TYPE and %ROWTYPE are useful for declaring the variables_list.
+// Current row is fetched, column values stored, cursor advances.
 
-CLOSE Cursor_name			//Should close the cursor once done with it.
+CLOSE Cursor_name	//Should close the cursor once done with it.
 DEALLOCATE cursor_name
 
 You cannot assign a value to an explicit cursor, use it in an expression, or use it as a formal 
@@ -52,5 +52,18 @@ subprogram parameter or host variable.  (You can do those things with a cursor v
 You can however can reference an explicit cursor or cursor variable by its name. 
 Therefore, an explicit cursor or cursor variable is called a named cursor.
 
+Follow up
+Using Cursors
+To retrieve a result set holding multiple rows, an application has to declare a cursor and fetch 
+each row from the cursor. The steps to use a cursor are the following: declare a cursor, open it, 
+fetch a row from the cursor, repeat, and finally close it.
 
+Select using cursors:
+DECLARE foo_bar CURSOR FOR
+    SELECT number, ascii FROM foo
+    ORDER BY ascii;
+OPEN foo_bar;
+FETCH foo_bar INTO :FooBar, DooDad;
+CLOSE foo_bar;
+COMMIT;
 
