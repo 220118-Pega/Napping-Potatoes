@@ -44,6 +44,8 @@ FORWARD
 
 BACKWARD
 
+WHERE CURRENT OF
+
 
 ## Sample Code
 Using Cursors
