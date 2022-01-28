@@ -27,6 +27,16 @@ Sometimes the application needs to process the rows in a singleton fashion, i.e.
 3. FETCH the data from cursor into PL/SQL variables or records in Exectution section
 4. CLOSE the cursor in Exection section before ending PL/SQL block
 
+## Cursor Commands
+NEXT
+LAST
+PRIOR
+FIRST
+ABSOLUTE count
+RELATIVE count
+FORWARD
+BACKWARD
+
 
 ## Sample Code
 Using Cursors
