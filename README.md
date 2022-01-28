@@ -32,13 +32,14 @@ Sometimes the application needs to process the rows in a singleton fashion, i.e.
 Using Cursors
 To retrieve a Result-Set holding multiple rows, an application has to declare a cursor and fetch each row from the cursor. You can declare a cursor and then define it later, but what we show here is when you declare and define the cursoe together. 
 
-DECLARE foo_bar CURSOR FOR
-    SELECT number, ascii FROM foo
-    ORDER BY ascii;
-OPEN foo_bar;
-FETCH foo_bar INTO :FooBar, DooDad;
-CLOSE foo_bar;
-COMMIT;
+DECLARE foo_bar CURSOR <br>
+	FOR <br>
+    SELECT number, ascii FROM foo <br>
+    ORDER BY ascii; <br>
+OPEN foo_bar; <br>
+FETCH foo_bar INTO :FooBar, DooDad; <br>
+CLOSE foo_bar; <br>
+COMMIT; <br>
 
 ## Syntax
 
