@@ -29,12 +29,19 @@ Sometimes the application needs to process the rows in a singleton fashion, i.e.
 
 ## Cursor Commands
 NEXT
+
 LAST
+
 PRIOR
+
 FIRST
+
 ABSOLUTE count
+
 RELATIVE count
+
 FORWARD
+
 BACKWARD
 
 
