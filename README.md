@@ -42,15 +42,15 @@ COMMIT;
 
 ## Syntax
 
-DECLARE cursor_name CURSOR		// declare the cursor
-  FOR
-SELECT select_statement			// to define the output for the cursor
-OPEN cursor_name				// open the cursor to store the result set
-FETCH NEXT FROM cursor INTO variable_list
-					// Current row is fetched, column values stored, cursor advances.
-					// %TYPE and %ROWTYPE are useful for declaring the variables_list.
-CLOSE Cursor_name	//Should close the cursor once done with it.
-DEALLOCATE cursor_name
+DECLARE cursor_name CURSOR		// declare the cursor  
+  FOR  
+SELECT select_statement			// to define the output for the cursor  
+OPEN cursor_name				// open the cursor to store the result set  
+FETCH NEXT FROM cursor INTO variable_list  
+					// Current row is fetched, column values stored, cursor advances.  
+					// %TYPE and %ROWTYPE are useful for declaring the variables_list.  
+CLOSE Cursor_name	//Should close the cursor once done with it.  
+DEALLOCATE cursor_name  
 
 
 
