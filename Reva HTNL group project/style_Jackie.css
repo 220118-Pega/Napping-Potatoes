@@ -11,3 +11,20 @@
     clear: both;
     display: table;
   }
+
+  .column_2 {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row_2::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  #img {
+      max-width: 100%
+  }
