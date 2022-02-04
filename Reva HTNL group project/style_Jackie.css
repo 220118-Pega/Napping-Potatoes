@@ -1,15 +1,15 @@
 .header {
-  padding: 150px;
+  padding: 60px;
   text-align: center;
-  background: #add8e6;
-  color: white;
+  background: linear-gradient(#add8e6, white);
+  color: #00008b;
   font-size: 30px;
 }
 
 
-
-
-
+p {
+  color: #00008b;
+}
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
@@ -55,3 +55,4 @@
       height: 500px;
       object-fit:cover;
   }
+
