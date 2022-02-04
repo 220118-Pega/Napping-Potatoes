@@ -1,8 +1,23 @@
-/* Three image containers (use 25% for four, and 50% for two, etc) */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(#add8e6, white);
+  color: #00008b;
+  font-size: 30px;
+}
+
+#header_2 {
+  padding-left: 430px;
+}
+
+.par {
+  color: #00008b;
+}
+
 .column {
-    float: left;
     width: 33.33%;
-    padding: 5px;
+    padding: 20px;
+    display: inline-block;
   }
 
   @media screen and (max-width: 500px) {
@@ -21,7 +36,7 @@
   .column_2 {
     float: left;
     width: 33.33%;
-    padding: 5px;
+    padding: 20px;
   }
 
   @media screen and (max-width: 500px) {
@@ -38,7 +53,14 @@
   }
 
   #img {
-      width: 100px;
-      height: 100px;
+      width: 500px;
+      height: 500px;
       object-fit:cover;
   }
+
+  iframe {
+    float: left;
+    padding-right: 200px;
+    padding: 20px;
+  }
+

@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class MainMenu {
+	
+	//We will instantiate a Scanner to obtain input and to display a menu!
+	
+	private Scanner myScanner;
+	
+	
+	
+	public MainMenu(Scanner myScanner) {
+		
+		this.myScanner = myScanner;
+		//These options are subject to change and update as program progresses
+		System.out.println("Welcome to Expense Reimbursement Menu.  What would you like to do?");
+		System.out.println("[0] Create a ticket");
+		System.out.println("[1] View a ticket");
+		System.out.println("[2] View all tickets");
+		System.out.println("[3] Check status of a ticket");
+		System.out.println("[4] Review/Approve a ticket");
+		System.out.println("[x] Exit");
+		
+		//Capture the user's menu selection
+		String userInput = myScanner.nextLine();
+		//Determine user's selection and then call or perform the appropriate action
+		switch (userInput) {
+		
+		case "0" :
+			System.out.println("Creating a ticket.");
+			createTicket();
+			break;
+		case "1" :
+			System.out.println("Viewing a ticket.");
+			viewTicket();
+			break;
+		case "2" :
+			System.out.println("View all tickets.");
+			createTicket();
+			break;
+		case "3" :
+			System.out.println("Check status of a ticket.");
+			createTicket();
+			break;
+		case "4" :
+			System.out.println("Check status of a ticket.");
+			createTicket();
+			break;
+		case "5" :
+			System.out.println("Check status of a ticket.");
+			createTicket();
+			break;
+		
+		}
+		
+		
+		
+	}
+
+
+
+	private void viewTicket() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void createTicket() {
+		// TODO Auto-generated method stub
+		
+	}
+	
